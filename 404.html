@@ -9,9 +9,13 @@
     <title>Página no encontrada | VETALOV Carpinteros</title>
     <meta name="robots" content="noindex" />
     <meta name="theme-color" content="#1e1e1e" />
-    <!-- GitHub Pages sirve esta página en /vetalov-web/ aunque la URL no exista.
-         Si algún día se usa un dominio propio, cambia el base a "/". -->
-    <base href="/vetal""ov-web/" />
+    <!-- Detecta la raíz del sitio: subcarpeta en GitHub Pages o raíz en Cloudflare/dominio propio -->
+    <script>
+      (function () {
+        var base = location.pathname.indexOf("/vetalov-web/") === 0 ? "/vetalov-web/" : "/";
+        document.write('<base href="' + base + '">');
+      })();
+    </script>
     <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="assets/img/icons/icon-180.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
