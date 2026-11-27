@@ -4,6 +4,12 @@ Sitio web estático de **VETALOV Carpinteros**, carpintería a medida en Canaria
 Diseño, fabricación e instalación: armarios, vestidores, cocinas, salones,
 puertas, escaleras y carpintería para hostelería.
 
+**Publicado en:** <https://josepear.github.io/vetalov-web/>
+
+> **Aviso:** la versión publicada todavía usa los datos de contacto
+> provisionales (`600 000 000`, `hola@vetalov.com`). Cámbialos en
+> `assets/js/site.js` antes de difundir la web.
+
 Sin frameworks ni compilación: HTML, CSS y JavaScript puro. Se publica
 directamente en GitHub Pages.
 
@@ -76,22 +82,16 @@ Las imágenes de proyectos están en dos tamaños: `-800.jpg` para las rejillas 
 
 ## Publicación en GitHub Pages
 
-El repositorio incluye un workflow que publica el sitio en cada push a `main`.
+El sitio está publicado en **<https://josepear.github.io/vetalov-web/>** mediante
+GitHub Actions. Cada push a `main` vuelve a desplegar automáticamente.
 
-> **Importante:** GitHub Pages con repositorios privados requiere un plan de
-> pago. Mientras el repositorio sea privado, el workflow se omite a propósito
-> para no generar errores.
-
-1. En GitHub, entra en **Settings → Pages**.
-2. En **Build and deployment → Source**, elige **GitHub Actions**.
-3. El repositorio debe ser público: **Settings → General → Danger Zone →
-   Change visibility**. Al hacerlo, el site se publicará en
-   `https://TU-USUARIO.github.io/vetalov-web/`.
-4. Si tienes un plan de pago y quieres mantenerlo privado, elimina la condición
-   `if:` del job en `.github/workflows/pages.yml` y activa Pages.
-
-Si prefieres no hacer público el repositorio, puedes conectarlo a Netlify,
-Vercel o Cloudflare Pages, que permiten desplegar desde repos privados.
+- El repositorio es público y Pages está configurado con origen **GitHub
+  Actions**.
+- Si se conecta un dominio propio (por ejemplo `vetalov.com`), añádelo en
+  **Settings → Pages** y cambia el `<base href="/vetalov-web/">` de
+  `404.html` por `<base href="/">`.
+- Si el repositorio volviera a ser privado sin plan de pago, el workflow se
+  omite para no fallar (condición `if` en `pages.yml`).
 
 Para un dominio propio, añade el dominio en **Settings → Pages** y crea el
 registro DNS correspondiente.
