@@ -17,6 +17,10 @@ concurrency:
 
 jobs:
   deploy:
+    # GitHub Pages para repos privados requiere un plan de pago.
+    # Al hacer público el repositorio, este workflow se ejecutará solo.
+    # Si tienes plan de pago y quieres Pages en privado, elimina esta línea.
+    if: github.event.repository.visibility == 'public'
     runs-on: ubuntu-latest
     environment:
       name: github-pages

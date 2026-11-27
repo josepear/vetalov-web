@@ -78,13 +78,20 @@ Las imágenes de proyectos están en dos tamaños: `-800.jpg` para las rejillas 
 
 El repositorio incluye un workflow que publica el sitio en cada push a `main`.
 
+> **Importante:** GitHub Pages con repositorios privados requiere un plan de
+> pago. Mientras el repositorio sea privado, el workflow se omite a propósito
+> para no generar errores.
+
 1. En GitHub, entra en **Settings → Pages**.
 2. En **Build and deployment → Source**, elige **GitHub Actions**.
-3. Haz push a `main` o lanza el workflow manualmente desde **Actions**.
+3. El repositorio debe ser público: **Settings → General → Danger Zone →
+   Change visibility**. Al hacerlo, el site se publicará en
+   `https://TU-USUARIO.github.io/vetalov-web/`.
+4. Si tienes un plan de pago y quieres mantenerlo privado, elimina la condición
+   `if:` del job en `.github/workflows/pages.yml` y activa Pages.
 
-Si el repositorio es privado, GitHub Pages con Actions requiere un plan de pago.
-En ese caso, cambia la visibilidad del repositorio a pública o publica el
-contenido en otro hosting estático (Netlify, Vercel, Cloudflare Pages…).
+Si prefieres no hacer público el repositorio, puedes conectarlo a Netlify,
+Vercel o Cloudflare Pages, que permiten desplegar desde repos privados.
 
 Para un dominio propio, añade el dominio en **Settings → Pages** y crea el
 registro DNS correspondiente.
