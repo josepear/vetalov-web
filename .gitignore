@@ -1,0 +1,16 @@
+# Dependencias y sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Herramientas de desarrollo
+node_modules/
+.vscode/
+.idea/
+
+# Carpeta de trabajo para generar imágenes (no se publica)
+.build/
+
+# Archivos temporales
+*.log
+*.tmp
