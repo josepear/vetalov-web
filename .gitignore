@@ -11,6 +11,9 @@ node_modules/
 # Carpeta de trabajo para generar imágenes (no se publica)
 .build/
 
+# Salida de build para Cloudflare Pages
+dist/
+
 # Archivos temporales
 *.log
 *.tmp
